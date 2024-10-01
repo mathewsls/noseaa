@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrendamientos</title>
+    </head>
+    <body>
+        <h1>Lista de arrendamientos</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Zona</th>
+                <th>Valor</th>
+                <th>Punto Inicial</th>
+                <th>Punto Final</th>
+                <th>Conductor</th>
+                <th>Pasajero</th>
+                <th>Estado</th>
+            </tr>
+            {% for arrendamiento in arrendamientos%}
+            <tr>
+                <td>{{ arrendamiento.id }}</td>
+                <td>{{ arrendamiento.fecha }}</td>
+                <td>{{ arrendamiento.zona }}</td>
+                <td>{{ arrendamiento.valor }}</td>
+                <td>{{ arrendamiento.punto_inicial }}</td>
+                <td>{{ arrendamiento.punto_final }}</td>
+                <td>{{ arrendamiento.conductor.nombres }} {{ arrendamiento.conductor.apellidos }}</td>
+                <td>{{ arrendamiento.pasajero.nombres }} {{ arrendamiento.pasajero.apellidos }}</td>
+                <td>{{ arrendamiento.estado }}</td>
+            </tr>
+             {% endfor %}
+        </table>
+    </body>
+</html>
